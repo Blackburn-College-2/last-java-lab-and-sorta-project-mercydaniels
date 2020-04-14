@@ -12,6 +12,8 @@ package liststacktemplate;
  */
 public class MyList<T> {
 
+    ListNode head = new ListNode(0);
+
     /**
      * get the ith element stored in the list. Note that this does not return
      * the containing node, but the stored element in the node. Null if D.N.E.
@@ -20,7 +22,10 @@ public class MyList<T> {
      * @return
      */
     public T get(int i) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        for (int j = 0; j < i; j++) {
+            head = head.next;
+        }
+        return head;
     }
 
     /**
@@ -30,7 +35,10 @@ public class MyList<T> {
      * @return the modified list object
      */
     public MyList<T> add(T v) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        ListNode added = new ListNode(v);
+        MyList list = new MyList();
+        list = head + added;
+        return list;
     }
 
     /**
@@ -44,7 +52,8 @@ public class MyList<T> {
         Be careful here! think about edge cases. If you choose to keep a
         'last' pointer, what if the element being removed is last?
          */
-        throw new UnsupportedOperationException("Not supported yet.");
+       node.get(i)= null;
+       return node;
     }
 
     /**
@@ -75,7 +84,11 @@ public class MyList<T> {
      * @return the length/size.
      */
     public int size() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        int count = 0;
+        while (head != null) {
+            count++;
+            head.next()l;
+        }
     }
 
     /**
